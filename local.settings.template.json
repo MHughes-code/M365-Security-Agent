@@ -1,0 +1,26 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+
+    "AgentConfiguration:TenantId": "<YOUR-ENTRA-TENANT-ID>",
+    "AgentConfiguration:ClientId": "<YOUR-APP-REGISTRATION-CLIENT-ID>",
+    "AgentConfiguration:ClientSecret": "<YOUR-APP-REGISTRATION-CLIENT-SECRET>",
+    "AgentConfiguration:OpenAiEndpoint": "<YOUR-AZURE-OPENAI-ENDPOINT>",
+    "AgentConfiguration:OpenAiApiKey": "<YOUR-AZURE-OPENAI-API-KEY>",
+    "AgentConfiguration:DeploymentName": "<YOUR-GPT-MODEL-DEPLOYMENT-NAME>",
+
+    "AgentConfiguration:ReportSharePointSiteId": "<YOUR-SHAREPOINT-SITE-ID>",
+    "AgentConfiguration:ReportDocumentLibrary": "Documents",
+    "AgentConfiguration:ReportFolderPath": "<YOUR-SHAREPOINT-FOLDER>",
+    "AgentConfiguration:ReportSharedMailbox": "<YOUR-SHARED-MAILBOX>",
+    "AgentConfiguration:ReportRecipients": "<RECIPIENT-EMAIL>",
+    "AgentConfiguration:ReportTeamsWebhookUrl": "",
+    "AgentConfiguration:ReportLogoSvgBase64": "",
+    "AgentConfiguration:OrganizationDomain": "yourdomain.com",
+
+    "BotConfiguration:MicrosoftAppId": "<YOUR-BOT-APP-ID>",
+    "BotConfiguration:MicrosoftAppPassword": "<YOUR-BOT-APP-PASSWORD>"
+  }
+}

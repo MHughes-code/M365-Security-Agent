@@ -1,0 +1,17 @@
+## Azure Functions
+local.settings.json
+bin/
+obj/
+
+## User secrets
+*.user
+
+## IDE
+.vs/
+
+*.suo
+*.userprefs
+
+## Build
+*.dll
+*.pdb
