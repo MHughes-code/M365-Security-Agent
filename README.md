@@ -318,6 +318,85 @@ SecurityAgent/
 └── .gitignore
 ```
 
+## Estimated Operating Cost
+
+This application primarily incurs cost from Azure OpenAI usage.  
+All Microsoft Graph, Defender for Endpoint, Intune, SharePoint, and email operations are covered under existing Microsoft 365 licensing and do not generate additional Azure charges.
+
+The current recommended model is **gpt-4.1-mini**, chosen for cost-efficient reasoning and tool orchestration.
+
+---
+
+### 🔎 Normal Monthly Usage (≤300 Investigations)
+
+Assumptions:
+- ~5,000 tokens per investigation (system prompt + tool definitions + tool responses + final answer)
+- ~300 investigations per month
+- ~20% of investigations involve Advanced Hunting (Tier 3)
+- 2 scheduled reports per month
+
+| Component | Estimated Monthly Cost |
+|------------|------------------------|
+| Base investigations | $6–$10 |
+| Advanced Hunting (Tier 3) | $2–$4 |
+| Report generation | <$1 |
+| Azure Functions + Storage | $0–$10 |
+
+**Estimated total monthly cost:**  
+### **$10–$25**
+
+---
+
+### 🚨 Incident Response Scenario (Usage Doubles)
+
+If investigation volume increases to ~600 per month during active incident response:
+
+- Increased Tier 3 usage (~40%)
+- Slightly higher token usage per investigation
+
+| Component | Estimated Monthly Cost |
+|------------|------------------------|
+| OpenAI usage | ~$26 |
+| Azure Functions + Storage | $5–$15 |
+
+**Estimated total during an active incident:**  
+### **$30–$45**
+
+---
+
+### 💣 Extreme High-Usage Scenario
+
+If usage increases significantly (1,000 investigations with heavy Advanced Hunting):
+
+- ~10,000 tokens average per investigation
+
+Estimated OpenAI cost:
+~$40
+
+Including compute overhead:
+
+### **$50–$75 total for a very high-usage month**
+
+---
+
+### 🧠 Optional Hybrid Model Strategy
+
+If Tier 3 investigations are upgraded to **gpt-4o** while keeping Tier 1/2 on gpt-4.1-mini:
+
+- Additional estimated cost: ~$10–$20 per month at current scale
+- Expected normal monthly total: ~$20–$40
+
+---
+
+### Executive Cost Summary
+
+Under normal usage (≤300 investigations per month), estimated operating expenses are approximately **$10–$25 per month**.
+
+During elevated incident response activity, costs may increase to approximately **$30–$45 per month**, with extreme high-usage scenarios remaining under **$75 per month**.
+
+The use of gpt-4.1-mini keeps surge usage financially manageable and predictable.
+
+
 ## Security Considerations
 
 - **Client secrets** should be stored in Azure Key Vault in production, not in app settings
