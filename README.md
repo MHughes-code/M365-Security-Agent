@@ -433,4 +433,6 @@ The use of gpt-4.1-mini keeps surge usage financially manageable and predictable
 
 ## License
 
-This project is provided as-is for internal IT security operations. Modify and deploy at your own discretion.
+This project is intended for internal IT security operations use.  
+Deploy, modify, and operate according to your organization's security, compliance, and governance requirements.
+
